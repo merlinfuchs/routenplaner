@@ -115,6 +115,7 @@ public class App extends Application {
 
         VBox menuPane = new VBox(sourceBox, targetBox, submitButton);
         menuPane.setSpacing(10);
+        menuPane.setPadding(new Insets(10));
         return menuPane;
     }
 
@@ -124,7 +125,6 @@ public class App extends Application {
         this.router = xmlReader.parseFile();
 
         HBox root = new HBox(buildMap(), buildMenu());
-        root.setSpacing(10);
         root.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
         Scene mainScene = new Scene(root, 900, 599);
 
