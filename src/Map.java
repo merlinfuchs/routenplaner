@@ -1,3 +1,5 @@
+import javafx.scene.image.Image;
+
 class Point {
     public float x;
     public float y;
@@ -22,13 +24,20 @@ class ReferencePoint {
 }
 
 
-public class PosTranslator {
+public class Map {
+    private Image image;
+
     private ReferencePoint referencePoint;
     private float pixelPerLat;
     private float pixelPerLon;
 
-    public PosTranslator(ReferencePoint firstReference, ReferencePoint secondReference) {
+    public Map(Image image, ReferencePoint firstReference, ReferencePoint secondReference) {
+        this.image = image;
+
+        // Save one reference point for later calculations
         referencePoint = firstReference;
+
+        // Calculate how many pixels represent one lat and one lon
         pixelPerLat = Math.abs((secondReference.point.y - firstReference.point.y) / (secondReference.lat - firstReference.lat));
         pixelPerLon = Math.abs((secondReference.point.x - firstReference.point.x) / (secondReference.lon - firstReference.lon));
     }
@@ -41,5 +50,9 @@ public class PosTranslator {
                 referencePoint.point.x + (lonDifference * -pixelPerLon),
                 referencePoint.point.y + (latDifference * pixelPerLat)
         );
+    }
+
+    public Image getImage() {
+        return image;
     }
 }
