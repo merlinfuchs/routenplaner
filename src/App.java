@@ -37,13 +37,26 @@ public class App extends Application {
     private StringProperty selectedTargetProperty = new SimpleStringProperty();
     private HashSet<Edge> toDraw = new HashSet<>();
 
-    public App() throws FileNotFoundException {}
+    public App() throws FileNotFoundException {
+    }
 
     private void findRoute() {
         Node sourceNode = router.getNodeByName(selectedSourceProperty.getValue());
         Node targetNode = router.getNodeByName(selectedTargetProperty.getValue());
         if (sourceNode == null || targetNode == null) return;
+        //for (Edge e : router.getEdges()) {
+        //    System.out.println(e.getName() + " " + e.getLength() +" "  +e.getSource().getName() + " "+e.getSource().getEdges().size() + " "+ e.getTarget().getName()+ " "+e.getTarget().getEdges().size());
+        //}
+        Dijkstra a = new Dijkstra();
+        toDraw = a.routingEdges(sourceNode, targetNode);
 
+
+        System.out.println("Start: " + sourceNode.getName() + " End: " + targetNode.getName());
+        float totalLength = 0;
+        for(Edge e : toDraw){
+            totalLength += e.getLength();
+        }
+        System.out.println("Total Length: " + totalLength + "km");
         // TODO: Find the fastest path between sourceNode and targetNode using @this.router
         //  and push the resulting edges to this.toDraw
         // TODO: Should be running in a separate thread to not block the javaFX app
