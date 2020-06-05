@@ -14,10 +14,13 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.stage.Stage;
+import pathfinding.PathFindingAlgorithm;
+import pathfinding.PathFindingAlgorithmType;
+import pathfinding.Dijkstra;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class App extends Application {
     private Router router;
@@ -37,7 +40,8 @@ public class App extends Application {
     private Pane drawContainer;
     private StringProperty selectedSourceProperty = new SimpleStringProperty();
     private StringProperty selectedTargetProperty = new SimpleStringProperty();
-    private HashSet<Edge> toDraw = new HashSet<>();
+    private ArrayList<Edge> toDraw = new ArrayList<>();
+    private PathFindingAlgorithmType algorithmType = PathFindingAlgorithmType.DIJKSTRA;
 
     public App() throws FileNotFoundException {
     }
@@ -49,19 +53,18 @@ public class App extends Application {
         //for (main.Edge e : router.getEdges()) {
         //    System.out.println(e.getName() + " " + e.getLength() +" "  +e.getSource().getName() + " "+e.getSource().getEdges().size() + " "+ e.getTarget().getName()+ " "+e.getTarget().getEdges().size());
         //}
-        Dijkstra a = new Dijkstra();
-        toDraw = a.routingEdges(sourceNode, targetNode);
 
-
-        System.out.println("Start: " + sourceNode.getName() + " End: " + targetNode.getName());
-        float totalLength = 0;
-        for(Edge e : toDraw){
-            totalLength += e.getLength();
+        PathFindingAlgorithm pathFindingAlgorithm = null;
+        switch (algorithmType) {
+            case DIJKSTRA:
+                pathFindingAlgorithm = new Dijkstra();
+                break;
         }
-        System.out.println("Total Length: " + totalLength + "km");
-        // TODO: Find the fastest path between sourceNode and targetNode using @this.router
-        //  and push the resulting edges to this.toDraw
-        // TODO: Should be running in a separate thread to not block the javaFX app
+
+        toDraw.clear();
+        if (pathFindingAlgorithm != null) {
+            toDraw = pathFindingAlgorithm.findBestRoute(sourceNode, targetNode);
+        }
 
         drawEdges();
     }
@@ -80,6 +83,8 @@ public class App extends Application {
             drawContainer.getChildren().add(new Circle(sourcePoint.x, sourcePoint.y, 1, Color.RED));
             drawContainer.getChildren().add(new Circle(targetPoint.x, targetPoint.y, 1, Color.RED));
         }
+
+        toDraw.clear();
 
         Node sourceNode = router.getNodeByName(selectedSourceProperty.getValue());
         if (sourceNode != null) {

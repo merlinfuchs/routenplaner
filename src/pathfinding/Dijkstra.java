@@ -1,19 +1,59 @@
-package main;
+package pathfinding;
+
+import main.Edge;
+import main.Node;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
-public class Dijkstra {
+class DijkstraNode {
+    private Node node;
+    private float costs;
+    private Node predecessor;
+    private Boolean visited;
+    public DijkstraNode(Node node, float costs){
+        this.node = node;
+        this.costs = costs;
+        this.visited = false;
+    }
+    public Node getNode() {
+        return node;
+    }
+    public Boolean getVisited() {
+        return visited;
+    }
+    public void setVisited(Boolean visited) {
+        this.visited = visited;
+    }
+
+    public float getCosts() {
+        return costs;
+    }
+    public void setCosts(float costs) {
+        this.costs = costs;
+    }
+
+    public Node getPredecessor() {
+        return predecessor;
+    }
+
+    public void setPredecessor(Node predecessor) {
+        this.predecessor = predecessor;
+    }
+}
+
+public class Dijkstra implements PathFindingAlgorithm {
     private List<DijkstraNode> dijkstraNodes;
     public Dijkstra(){
         this.dijkstraNodes = new ArrayList<>();
     }
-    public HashSet<Edge> routingEdges(Node sourceNode, Node targetNode) {
+
+    public ArrayList<Edge> findBestRoute(Node sourceNode, Node targetNode) {
         calculateAllCostsFromSourceNode(sourceNode);
         return getBestRouteEdges(sourceNode, targetNode);
     }
-    //Calculate all Costs from start main.Point with main.Dijkstra
+
+    //Calculate all Costs from start main.Point with pathfinding.Dijkstra
     private void calculateAllCostsFromSourceNode(Node sourceNode){
         dijkstraNodes.add(new DijkstraNode(sourceNode, 0)); //Add start main.Node
         while (true) {
@@ -24,8 +64,8 @@ public class Dijkstra {
             addNewNodes(nextNode);
         }
     }
-    private HashSet<Edge> getBestRouteEdges(Node sourceNode, Node targetNode){
-        HashSet<Edge> edges = new HashSet<>();
+    private ArrayList<Edge> getBestRouteEdges(Node sourceNode, Node targetNode){
+        ArrayList<Edge> edges = new ArrayList<>();
         DijkstraNode curredNode = findDijkstraNode(targetNode);
         while (true){
             if (sourceNode.getName().equalsIgnoreCase(curredNode.getNode().getName())){ //Found source main.Node
