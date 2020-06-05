@@ -1,3 +1,5 @@
+package main;
+
 import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;

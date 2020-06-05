@@ -1,3 +1,5 @@
+package main;
+
 public class DijkstraNode {
     private Node node;
     private float costs;

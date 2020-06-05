@@ -1,3 +1,5 @@
+package main;
+
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -44,7 +46,7 @@ public class App extends Application {
         Node sourceNode = router.getNodeByName(selectedSourceProperty.getValue());
         Node targetNode = router.getNodeByName(selectedTargetProperty.getValue());
         if (sourceNode == null || targetNode == null) return;
-        //for (Edge e : router.getEdges()) {
+        //for (main.Edge e : router.getEdges()) {
         //    System.out.println(e.getName() + " " + e.getLength() +" "  +e.getSource().getName() + " "+e.getSource().getEdges().size() + " "+ e.getTarget().getName()+ " "+e.getTarget().getEdges().size());
         //}
         Dijkstra a = new Dijkstra();

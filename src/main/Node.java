@@ -1,3 +1,5 @@
+package main;
+
 import java.util.HashSet;
 
 public class Node {

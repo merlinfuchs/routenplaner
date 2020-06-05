@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,9 +13,9 @@ public class Dijkstra {
         calculateAllCostsFromSourceNode(sourceNode);
         return getBestRouteEdges(sourceNode, targetNode);
     }
-    //Calculate all Costs from start Point with Dijkstra
+    //Calculate all Costs from start main.Point with main.Dijkstra
     private void calculateAllCostsFromSourceNode(Node sourceNode){
-        dijkstraNodes.add(new DijkstraNode(sourceNode, 0)); //Add start Node
+        dijkstraNodes.add(new DijkstraNode(sourceNode, 0)); //Add start main.Node
         while (true) {
             DijkstraNode nextNode = getNotVisitedLowestCostNode();
             if(nextNode == null){
@@ -26,7 +28,7 @@ public class Dijkstra {
         HashSet<Edge> edges = new HashSet<>();
         DijkstraNode curredNode = findDijkstraNode(targetNode);
         while (true){
-            if (sourceNode.getName().equalsIgnoreCase(curredNode.getNode().getName())){ //Found source Node
+            if (sourceNode.getName().equalsIgnoreCase(curredNode.getNode().getName())){ //Found source main.Node
                 break;
             }
             edges.add(findEdge(curredNode.getPredecessor(), curredNode.getNode()));
@@ -48,7 +50,7 @@ public class Dijkstra {
             if(nextNode == null && !dNode.getVisited()){
                 nextNode = dNode;
             }
-            if(nextNode != null && !dNode.getVisited() && dNode.getCosts() < nextNode.getCosts()){ // Check if visited and if Costs lower than curred lowest Node
+            if(nextNode != null && !dNode.getVisited() && dNode.getCosts() < nextNode.getCosts()){ // Check if visited and if Costs lower than curred lowest main.Node
                 nextNode = dNode;
             }
         }
