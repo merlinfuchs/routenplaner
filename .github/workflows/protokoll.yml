@@ -12,6 +12,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Create build dir
+        run: mkdir build
+
       - name: Convert Markdown
         uses: docker://pandoc/core:2.9
         with:
