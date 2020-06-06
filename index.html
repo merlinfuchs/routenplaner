@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>PPQ1_Routenplaner</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><strong>Europaschule Schulzentrum SII Utbremen</strong></p>
+<p><em>Protokoll</em></p>
+<p><strong>Programmier-Praktikum</strong></p>
+<p><strong><br />
+Projekt 4: Routenplaner</strong></p>
+<p>vorgelegt von...</p>
+<table>
+<thead>
+<tr class="header">
+<th>Name:</th>
+<th><p>Merlin Fuchs,</p>
+<p>Jan Hendrik Müller,</p>
+<p>Radosław Wardzinski</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Klasse:</td>
+<td>DQI17 Q1</td>
+</tr>
+<tr class="even">
+<td>Gruppe:</td>
+<td>PP1</td>
+</tr>
+<tr class="odd">
+<td>Datum:</td>
+<td>06.06.2020</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Inhaltsverzeichnis</strong></p>
+<section id="inhalt" class="TOC-Heading">
+<h1 class="TOC-Heading">Inhalt</h1>
+<p><a href="#projektbeschreibung">Projektbeschreibung 3</a></p>
+<p><a href="#einzelaufgaben">Einzelaufgaben 3</a></p>
+<p><a href="#theoretische-überlegungen">Theoretische Überlegungen 3</a></p>
+<p><a href="#softwareentwurf">Softwareentwurf 3</a></p>
+<p><a href="#projektplanung">Projektplanung 4</a></p>
+<p><a href="#persönliche-zielsetzungen">Persönliche Zielsetzungen 4</a></p>
+<p><a href="#arbeitsaufteilung">Arbeitsaufteilung 4</a></p>
+<p><a href="#projektverlauf">Projektverlauf 4</a></p>
+<p><a href="#überblick">Überblick 4</a></p>
+<p><a href="#tests">Tests 4</a></p>
+<p><a href="#projektergebnisse">Projektergebnisse 5</a></p>
+<p><a href="#ergebnisse">Ergebnisse 5</a></p>
+<p><a href="#mängel">Mängel 5</a></p>
+<p><a href="#fazit">Fazit 5</a></p>
+</section>
+<h1 id="projektbeschreibung">Projektbeschreibung</h1>
+<p>Wir schreiben das Jahr 2004. Ein großer Internet Suchanbieter plant die Bereitstellung einer Routenplanungssoftware auf Basis von frei verfügbarem Kartenmaterial. Ihr werdet beauftragt, einen Prototypen für das Autobahnnetz Deutschlands zu erstellen.</p>
+<p> </p>
+<p>Euch werden Positionsdaten von Autobahnausfahrten und Verbindungen dieser unter einander in Form einer .xml-Datei zu Verfügung gestellt. Anhand dieser Daten soll die kürzeste Entfernung zwischen zwei Punkten über die verfügbaren Routen erstellt werden. Hierzu wird euch außerdem eine Karte von Deutschland zu Verfügung gestellt. Auf dieser soll die Route visuell dargestellt werden.</p>
+<h2 id="einzelaufgaben">Einzelaufgaben</h2>
+<ul>
+<li><p>Erstellen der Software in Java und designen einer benutzerfreundlichen GUI welche die folgenden Anforderungen erfüllt:</p>
+<ul>
+<li><p>Eingabe Startpunkt (Durch Benutzer)</p></li>
+<li><p>Eingabe Endpunkt (Durch Benutzer)</p></li>
+<li><p>Auswahl aus Liste von Möglichkeiten (z.B. Dropdown Menu) / Browniepoints: Suche mit dynamischer Anzeige von Suchergebnissen</p></li>
+<li><p>Einbindung der Deutschlandkarte in die GUI</p></li>
+<li><p>Fenster zur Ausgabe der Route in Textform</p></li>
+<li><p>Schaltfläche für den Start des Routenplaners</p></li>
+</ul></li>
+<li><p>Einlesen der XML Daten</p></li>
+<li><p>Berechnen des kürzesten Weges zwischen Start und Ziel</p></li>
+<li><p>Visuelle Darstellung der Route auf der Deutschlandkarte in der GUI durch rote Linienverbindungen zwischen einzelnen Knoten</p></li>
+<li><p>Eine schriftliche Ausgabe der Zwischenknoten -&gt; im Fenster</p></li>
+<li><p>Browniepoints: Export in eine Textdatei</p></li>
+</ul>
+<h1 id="theoretische-überlegungen">Theoretische Überlegungen</h1>
+<p>Durch die wenige Präsenz in der Schule haben wir und online als Gruppe zusammengeschlossen. Nach dem Gruppen bilden, haben wir uns über Discord abgesprochen wer was machen wollte. Hier haben wir das Projekt in die Grundsätzlichen teile aufgeteilt und uns zu den einzelnen Teilen Gedanken gemacht. Z.B. haben wir uns bei der GUI überlegt, wie wir die Autobahnknoten auf die bereitgestellte Deutschland Karte bringen.</p>
+<h1 id="softwareentwurf">Softwareentwurf</h1>
+<p>Wir haben uns dafür entschieden den Hauptteil des Programms und die Methoden zum finden der besten Route zu trennen. Das hat den Vorteil, dass man verschiedene Algorithmen an einem Ort findet und somit zum Finden der besten Route verwenden kann. Zudem werden Hilfsklassen wie Z.B. bei der Map verwendet. Hilfsklassen package-private Klassen, die in der gleichen Datei verwendet werden.</p>
+<p>Die mitgelieferten Dateien (data.xml und map.png) haben wir in einem asset Ordner außerhalb des Source Codes gespeichert.</p>
+<p>----------------------------------------------------------------------------------------------- Nur das Oberhalb ist aus diesem Projekt.</p>
+<h1 id="projektplanung">Projektplanung</h1>
+<h2 id="persönliche-zielsetzungen">Persönliche Zielsetzungen</h2>
+<p><strong>Jan:</strong> Ich habe mir als Ziel gesetzt, den Algorithmus für die Berechnung der besten Route zu implementieren<br />
+<strong>Merlin:</strong></p>
+<p><strong>Fabian:</strong> Ich habe mir als Zielsetzung gesetzt, dass ich einen Einblick in das Projekt und den Code bekommen und das Protokoll zu schreiben.</p>
+<h2 id="arbeitsaufteilung">Arbeitsaufteilung</h2>
+<p>Die Arbeitsaufteilung war relativ simpel:<br />
+<strong>Jan:</strong> Algorithmus zum finden der besten Route (Dijkstra)</p>
+<p><strong>Merlin:</strong> Backend und GUI</p>
+<p><strong>Fabian:</strong> Protokoll &amp; Hilfe im Programm</p>
+<p>Die Arbeitsaufteilung lief ziemlich gut. Bei der Struktur haben wir dann gemeinsam nochmal drüber gesehen und hier und da noch Verbesserungen vorgenommen. Somit haben wir also in der Arbeitsteilung die Stärken von uns genutzt und die Aufgaben effizient aufgeteilt sowie uns untereinander geholfen.</p>
+<h1 id="projektverlauf">Projektverlauf</h1>
+<h2 id="überblick">Überblick</h2>
+<p>Da wir nur wenige PP Stunden hatten, aber in diesen die Arbeitsverteilung schon gemacht hatten, konnte jeder erstmal an seiner Aufgabe Arbeiten und wir konnten effizient vorrankommen. Zwischendurch haben wir uns über Discord verständigt und die fertigen Arbeiten so wie uns über unseren Arbeitsstand ausgetauscht. Dies lief sehr gut am Ende haben wir dann nur noch alles zusammengetragen.</p>
+<h2 id="tests">Tests</h2>
+<h1 id="projektergebnisse">Projektergebnisse</h1>
+<h2 id="ergebnisse">Ergebnisse</h2>
+<p>Allgemein haben wir das Programm fertigbekommen und alle Mindestanforderungen sowie ein paar Erweiterungen erfüllt. Wir haben ebenfalls eigene Ideen eingebracht (eigene Kaffee Spezialität). Außerdem sind wir sehr mit der Benutzeroberfläche zufrieden. Auch in der Gruppe gab es keine Konflikte und letztendlich haben wir alles erreicht, was wir erreichen wollten.</p>
+<h2 id="mängel">Mängel</h2>
+<h2 id="fazit">Fazit</h2>
+<p><strong>Jan:</strong> Ich habe eigentlich alles gut hinbekommen bis auf die üblichen kleinen Probleme. Durch die Tipps meiner Teamkollegen habe ich meine Struktur noch verbessern können und konnte auch was für zukünftige Projekte mitnehmen. Die Arbeit mit meinen Teamkollegen hat gutgeklappt und hat mir Spaß gemacht.<br />
+<strong>Merlin:</strong></p>
+<p><strong>Fabian:</strong> Ich habe alles im zeitlichen Rahmen geschafft und mich mit meinen Teamkollegen gut verstanden. Die Arbeit hat gut geklappt und ist reibungslos abgelaufen.</p>
+</body>
+</html>
