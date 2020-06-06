@@ -18,7 +18,7 @@ jobs:
       - name: Convert Markdown
         uses: docker://pandoc/core:2.9
         with:
-          args: --standalone -s Protokoll/PPQ1_Routenplaner.docx -o build/README.md
+          args: --standalone -s Protokoll/PPQ1_Routenplaner.docx -o build/README.md -t gfm
 
       - name: Convert HTML
         uses: docker://pandoc/core:2.9
