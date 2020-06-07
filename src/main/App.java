@@ -14,13 +14,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pathfinding.PathFindingAlgorithm;
 import pathfinding.PathFindingAlgorithmType;
 import pathfinding.Dijkstra;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class App extends Application {
@@ -38,6 +38,8 @@ public class App extends Application {
                     new Point(380, 576)
             )
     );
+
+    private Stage mainStage;
     private Pane drawContainer;
     private Pane textContainer;
     private StringProperty selectedSourceProperty = new SimpleStringProperty();
@@ -78,18 +80,18 @@ public class App extends Application {
             Point targetPoint = map.translate(edge.getTarget());
 
             Line edgeLine = new Line(sourcePoint.x, sourcePoint.y, targetPoint.x, targetPoint.y);
-            edgeLine.setStroke(Color.GREEN);
+            edgeLine.setStroke(Color.RED);
             edgeLine.setStrokeWidth(1);
             drawContainer.getChildren().add(edgeLine);
 
-            drawContainer.getChildren().add(new Circle(sourcePoint.x, sourcePoint.y, 1, Color.RED));
-            drawContainer.getChildren().add(new Circle(targetPoint.x, targetPoint.y, 1, Color.RED));
+            drawContainer.getChildren().add(new Circle(sourcePoint.x, sourcePoint.y, 1, Color.GREEN));
+            drawContainer.getChildren().add(new Circle(targetPoint.x, targetPoint.y, 1, Color.GREEN));
         }
 
         Node sourceNode = router.getNodeByName(selectedSourceProperty.getValue());
         if (sourceNode != null) {
             Point point = map.translate(sourceNode);
-            drawContainer.getChildren().add(new Circle(point.x, point.y, 5, Color.GREEN));
+            drawContainer.getChildren().add(new Circle(point.x, point.y, 5, Color.BLUE));
         }
 
         Node targetNode = router.getNodeByName(selectedTargetProperty.getValue());
@@ -167,7 +169,28 @@ public class App extends Application {
         textContainer = new VBox();
         ScrollPane scrollPane = new ScrollPane(textContainer);
 
-        VBox menuPane = new VBox(sourceBox, targetBox, submitButton, scrollPane);
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialFileName("route.txt");
+        Button exportButton = new Button("Export Route");
+        exportButton.setOnAction(e -> {
+            File file = fileChooser.showSaveDialog(mainStage);
+            if (file != null) {
+                try {
+                    FileWriter writer = new FileWriter(file);
+                    for (javafx.scene.Node node : textContainer.getChildren()) {
+                        if (node instanceof Label) {
+                            writer.write(((Label) node).getText() + "\n");
+                        }
+                    }
+                    writer.close();
+
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        VBox menuPane = new VBox(sourceBox, targetBox, submitButton, scrollPane, exportButton);
         menuPane.setSpacing(10);
         menuPane.setPadding(new Insets(10));
         return menuPane;
@@ -175,6 +198,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        mainStage = stage;
         XMLReader xmlReader = new XMLReader("assets/data.xml");
         this.router = xmlReader.parseFile();
 
