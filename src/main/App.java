@@ -5,10 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -196,15 +193,41 @@ public class App extends Application {
         return menuPane;
     }
 
+    private MenuBar buildMenuBar() {
+        Menu algorithmMenu = new Menu("Algorithm");
+        ToggleGroup algorithms = new ToggleGroup();
+        for (PathFindingAlgorithmType algorithm : PathFindingAlgorithmType.values()) {
+            RadioMenuItem item = new RadioMenuItem(algorithm.name());
+            if (algorithm == this.algorithmType) {
+                item.setSelected(true);
+            }
+            item.selectedProperty().addListener((ob, ws, is) -> {
+                if (is) this.algorithmType = algorithm;
+            });
+            algorithms.getToggles().add(item);
+            algorithmMenu.getItems().add(item);
+        }
+
+        Menu settingsMenu = new Menu("Settings");
+        settingsMenu.getItems().add(algorithmMenu);
+
+        MenuBar menuBar = new MenuBar(settingsMenu);
+        menuBar.setMaxHeight(30);
+        return menuBar;
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
         mainStage = stage;
         XMLReader xmlReader = new XMLReader("assets/data.xml");
         this.router = xmlReader.parseFile();
 
-        HBox root = new HBox(buildMap(), buildMenu());
+        HBox mainContent = new HBox(buildMap(), buildMenu());
+        BorderPane root = new BorderPane();
+        root.setCenter(mainContent);
+        root.setTop(buildMenuBar());
         root.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-        Scene mainScene = new Scene(root, 900, 599);
+        Scene mainScene = new Scene(root, 900, 629);
 
         stage.setResizable(false);
         stage.setTitle("DQI Maps");
