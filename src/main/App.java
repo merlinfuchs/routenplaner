@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -38,6 +39,7 @@ public class App extends Application {
             )
     );
     private Pane drawContainer;
+    private Pane textContainer;
     private StringProperty selectedSourceProperty = new SimpleStringProperty();
     private StringProperty selectedTargetProperty = new SimpleStringProperty();
     private ArrayList<Edge> toDraw = new ArrayList<>();
@@ -84,8 +86,6 @@ public class App extends Application {
             drawContainer.getChildren().add(new Circle(targetPoint.x, targetPoint.y, 1, Color.RED));
         }
 
-        toDraw.clear();
-
         Node sourceNode = router.getNodeByName(selectedSourceProperty.getValue());
         if (sourceNode != null) {
             Point point = map.translate(sourceNode);
@@ -97,6 +97,37 @@ public class App extends Application {
             Point point = map.translate(targetNode);
             drawContainer.getChildren().add(new Circle(point.x, point.y, 5, Color.RED));
         }
+
+        textContainer.getChildren().clear();
+        ArrayList<Edge> toDisplay = new ArrayList<>();
+        int totalLength = 0;
+        for (Edge edge : toDraw) {
+            totalLength += edge.getLength();
+            Edge lastElement = null;
+            try {
+                lastElement = toDisplay.get(toDisplay.size() - 1);
+            } catch (IndexOutOfBoundsException ignored) {
+            }
+
+            if (lastElement == null || !lastElement.getName().equals(edge.getName())) {
+                Edge tempEdge = new Edge(edge.getName(), edge.getLength());
+                tempEdge.setSource(edge.getSource());
+                tempEdge.setTarget(edge.getTarget());
+                toDisplay.add(tempEdge);
+            } else {
+                lastElement.setTarget(edge.getTarget());
+                lastElement.setLength(lastElement.getLength() + edge.getLength());
+            }
+        }
+
+        textContainer.getChildren().add(new Label("Total Length: " + totalLength + " km"));
+        textContainer.getChildren().add(new Label());
+        for (Edge edge : toDisplay) {
+            String name = String.format("%s: %s -> %s (%d km)", edge.getName(), edge.getSource().getName(), edge.getTarget().getName(), (int) edge.getLength());
+            textContainer.getChildren().add(new Label(name));
+        }
+
+        toDraw.clear();
     }
 
     private Pane buildMap() {
@@ -133,7 +164,10 @@ public class App extends Application {
         Button submitButton = new Button("Find Route");
         submitButton.setOnAction((e) -> findRoute());
 
-        VBox menuPane = new VBox(sourceBox, targetBox, submitButton);
+        textContainer = new VBox();
+        ScrollPane scrollPane = new ScrollPane(textContainer);
+
+        VBox menuPane = new VBox(sourceBox, targetBox, submitButton, scrollPane);
         menuPane.setSpacing(10);
         menuPane.setPadding(new Insets(10));
         return menuPane;

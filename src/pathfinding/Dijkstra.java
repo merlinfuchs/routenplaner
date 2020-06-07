@@ -4,6 +4,7 @@ import main.Edge;
 import main.Node;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class DijkstraNode {
@@ -74,6 +75,8 @@ public class Dijkstra implements PathFindingAlgorithm {
             edges.add(findEdge(curredNode.getPredecessor(), curredNode.getNode()));
             curredNode = findDijkstraNode(curredNode.getPredecessor());
         }
+
+        Collections.reverse(edges);
         return edges;
     }
     private Edge findEdge(Node sourceNode, Node targetNode){

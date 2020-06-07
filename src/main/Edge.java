@@ -28,6 +28,10 @@ public class Edge {
         return length;
     }
 
+    public void setLength(float length) {
+        this.length = length;
+    }
+
     public Node getSource() {
         return source;
     }
