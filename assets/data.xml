@@ -2704,15 +2704,15 @@
 <node id="LÜNEBURG - NORD (A 250)"><data key="lat">53.2792938</data><data key="lon">10.3968517</data></node>
 <node id="DREIECK HAMBURG - WILHELMSBURG - NORD"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
 <node id="HAMBURG - GEORGSWERDER (A 252)"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
-<node id="KREUZ HAMBURG - SÜD"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
+<node id="KREUZ HAMBURG - SÜD"><data key="lat">53.5095100</data><data key="lon">10.0462660</data></node>
 <node id="DREIECK HAMBURG - WILHELMSBURG - NORD"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
 <node id="HAMBURG - WILHELMSBURG (A 253)"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
 <node id="HAMBURG - WILHELMSBURG - SÜD"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
 <node id="HAMBURG - NEULAND (A 253)"><data key="lat">53.4596217</data><data key="lon">9.9986455</data></node>
 <node id="HAMBURG - HARBURG - MITTE (A 253)"><data key="lat">53.4596217</data><data key="lon">9.9986455</data></node>
 <node id="HAMBURG - WILSTORF (A 253)"><data key="lat">53.4530743</data><data key="lon">9.9921233</data></node>
-<node id="KREUZ HAMBURG - SÜD"><data key="lat">53.5071178</data><data key="lon">10.037158</data></node>
-<node id="KREUZ HAMBURG - SÜD"><data key="lat">53.5071178</data><data key="lon">10.037158</data></node>
+<node id="KREUZ HAMBURG - SÜD"><data key="lat">53.5095100</data><data key="lon">10.0462660</data></node>
+<node id="KREUZ HAMBURG - SÜD"><data key="lat">53.5095100</data><data key="lon">10.0462660</data></node>
 <node id="DREIECK HAMBURG - SÜDWEST"><data key="lat">53.4348227</data><data key="lon">9.927618</data></node>
 <node id="HAMBURG - MARMSTORF / LÜRADE (A 261)"><data key="lat">53.4222121</data><data key="lon">9.9271461</data></node>
 <node id="TÖTENSEN ( ROSENGARTEN ) (A 261)"><data key="lat">53.4222121</data><data key="lon">9.9271461</data></node>
@@ -2825,11 +2825,11 @@
 <node id="LANGENFELD - REUSRATH (A 542)"><data key="lat">51.0933207</data><data key="lon">6.9519589</data></node>
 <node id="LANGENFELD - IMMIGRATH (A 542)"><data key="lat">51.1086609</data><data key="lon">6.9744379</data></node>
 <node id="DREIECK LANGENFELD"><data key="lat">51.1086609</data><data key="lon">6.9744379</data></node>
-<node id="AACHEN  - EUROPAPLATZ (A 542)"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
-<node id="AACHEN  - ROTHE ERDE (A 542)"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
-<node id="WÜRSELEN (A 542)"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
-<node id="KREUZ AACHEN  (Westteil)"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
-<node id="KREUZ AACHEN  (Ostteil)"><data key="lat">53.5168044</data><data key="lon">10.0119099</data></node>
+<node id="AACHEN  - EUROPAPLATZ (A 542)"><data key="lat">50.7802970</data><data key="lon">6.1083150</data></node>
+<node id="AACHEN  - ROTHE ERDE (A 542)"><data key="lat">50.7802970</data><data key="lon">6.1083150</data></node>
+<node id="WÜRSELEN (A 542)"><data key="lat">50.8308510</data><data key="lon">6.130546</data></node>
+<node id="KREUZ AACHEN  (Westteil)"><data key="lat">50.8044780</data><data key="lon">6.1705530</data></node>
+<node id="KREUZ AACHEN  (Ostteil)"><data key="lat">50.8044780</data><data key="lon">6.1705530</data></node>
 <node id="KREUZ BLIESHEIM"><data key="lat">50.7749259</data><data key="lon">6.8290428</data></node>
 <node id="BRÜHL - SÜD (A 553)"><data key="lat">50.7962259</data><data key="lon">6.8699126</data></node>
 <node id="BRÜHL / BORNHEIM (A 553)"><data key="lat">50.803423</data><data key="lon">6.9048392</data></node>
