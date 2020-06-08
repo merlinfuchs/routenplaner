@@ -58,13 +58,13 @@ Projekt 4: Routenplaner</strong></p>
 <p><a href="#projektplanung">Projektplanung 4</a></p>
 <p><a href="#persönliche-zielsetzungen">Persönliche Zielsetzungen 4</a></p>
 <p><a href="#arbeitsaufteilung">Arbeitsaufteilung 4</a></p>
-<p><a href="#projektverlauf">Projektverlauf 4</a></p>
-<p><a href="#überblick">Überblick 4</a></p>
+<p><a href="#projektverlauf">Projektverlauf 5</a></p>
+<p><a href="#überblick">Überblick 5</a></p>
 <p><a href="#tests">Tests 5</a></p>
-<p><a href="#projektergebnisse">Projektergebnisse 5</a></p>
-<p><a href="#ergebnisse">Ergebnisse 5</a></p>
-<p><a href="#mängel">Mängel 5</a></p>
-<p><a href="#fazit">Fazit 6</a></p>
+<p><a href="#projektergebnisse">Projektergebnisse 6</a></p>
+<p><a href="#ergebnisse">Ergebnisse 6</a></p>
+<p><a href="#mängel">Mängel 7</a></p>
+<p><a href="#fazit">Fazit 8</a></p>
 </section>
 <h1 id="projektbeschreibung">Projektbeschreibung</h1>
 <p>Wir schreiben das Jahr 2004. Ein großer Internet Suchanbieter plant die Bereitstellung einer Routenplanungssoftware auf Basis von frei verfügbarem Kartenmaterial. Ihr werdet beauftragt, einen Prototypen für das Autobahnnetz Deutschlands zu erstellen.</p>
@@ -88,36 +88,44 @@ Projekt 4: Routenplaner</strong></p>
 <li><p>Browniepoints: Export in eine Textdatei</p></li>
 </ul>
 <h1 id="theoretische-überlegungen">Theoretische Überlegungen</h1>
-<p>Durch die wenige Präsenz in der Schule haben wir und online als Gruppe zusammengeschlossen. Nach dem Gruppen bilden, haben wir uns über Discord abgesprochen wer was machen wollte. Hier haben wir das Projekt in die Grundsätzlichen teile aufgeteilt und uns zu den einzelnen Teilen Gedanken gemacht. Z.B. haben wir uns bei der GUI überlegt, wie wir die Autobahnknoten auf die bereitgestellte Deutschland Karte bringen. Letztendlich war von Anfang an klar, dass wir unser Projekt über Git austauschen.</p>
+<p>Durch die wenige Präsenz in der Schule haben wir uns online als Gruppe zusammengeschlossen. Nach dem Gruppen bilden, haben wir uns über Discord abgesprochen wer welchen Aufgabenteil übernehmen soll. Hier haben wir das Projekt in die Grundsätzlichen teile aufgeteilt und uns zu den einzelnen Teilen Gedanken gemacht. Z.B. haben wir uns bei der GUI überlegt, wie wir die Autobahnknoten auf die bereitgestellte Deutschland Karte bringen.</p>
+<p>Für das gemeinsame Arbeiten an dem Programm haben wir für uns Versionskontrollsystem GIT entschieden. Dies ermöglicht es uns gleichzeitig an verschiedenen Stellen zu arbeiten und unsere Änderungen später zusammenzuführen.</p>
 <h1 id="softwareentwurf">Softwareentwurf</h1>
-<p>Wir haben uns dafür entschieden den Hauptteil des Programms und die Methoden zum finden der besten Route zu trennen. Das hat den Vorteil, dass man verschiedene Algorithmen an einem Ort findet und somit zum Finden der besten Route verwenden kann. Zudem werden Hilfsklassen wie Z.B. bei der Map verwendet. Hilfsklassen protected Klassen, die in der gleichen Datei verwendet werden.</p>
-<p>Die mitgelieferten Dateien (data.xml und map.png) haben wir in einem asset Ordner außerhalb des Source Codes gespeichert.</p>
+<p>Wir haben uns dafür entschieden die Webgfindungs-Algorithmen von dem Rest des Programms zu testen. Dies ermöglicht es uns verschiedene Algorithmen zu implementieren und später zwischen diesen zu wechseln. Letztendlich haben wir nur den Dijkstra-Algorithmus implementiert, aber die Erweiterungsmöglichkeit bleibt.</p>
+<p><img src="media/image1.png" style="width:3.86736in;height:3.10625in" /><img src="media/image2.png" style="width:3.20625in;height:3.11319in" />Die mitgelieferten Dateien (data.xml und map.png) haben wir in einem „asset„ Ordner außerhalb des Source Codes gespeichert.</p>
 <h1 id="projektplanung">Projektplanung</h1>
 <h2 id="persönliche-zielsetzungen">Persönliche Zielsetzungen</h2>
-<p><strong>Jan:</strong> Ich habe mir als Ziel gesetzt, den Algorithmus für die Berechnung der besten Route zu implementieren<br />
-<strong>Merlin:</strong></p>
-<p><strong>Radek</strong></p>
+<h3 id="jan">Jan</h3>
+<p>Ich habe mir als Ziel gesetzt, den Algorithmus für die Berechnung der besten Route zu implementieren und mich so weiter mit den verschiedenen Wegfindungsalgorithmen vertraut zu machen.<br />
+<strong>Merlin</strong></p>
+<h3 id="radek">Radek</h3>
 <h2 id="arbeitsaufteilung">Arbeitsaufteilung</h2>
-<p>Die Arbeitsaufteilung war relativ simpel:<br />
-<strong>Jan:</strong> Algorithmus zum finden der besten Route (Dijkstra) und Protokoll</p>
-<p><strong>Merlin:</strong> Backend und GUI</p>
-<p><strong>Radek:</strong></p>
 <p>Dadurch, dass wir uns nur online absprechen konnten, haben wir uns am Anfang einmal um die Arbeitsaufteilung gekümmert. Jeder hat dann einmal mit den anderen besprochen, was jeder von uns machen möchte und was deren Ziele sind. Daraus haben wir uns dann auf die Arbeitsaufteilung geeinigt. Dies lief reibungs- und problemlos.</p>
+<h3 id="jan-1"><br />
+Jan</h3>
+<p>Algorithmus zum Finden der besten Route (Dijkstra) und Protokoll</p>
+<h3 id="merlin">Merlin</h3>
+<p>Backend und GUI</p>
+<h3 id="radek-1">Radek</h3>
 <h1 id="projektverlauf">Projektverlauf</h1>
 <h2 id="überblick">Überblick</h2>
 <p>Da wir keine PP Stunden hatten, lief die ganze Organisation online über Discord und WhatsApp ab. Nach der Arbeitsaufteilung haben wir an dem Projekt gearbeitet, wenn gerade Zeit war. Da wir an meist unterschiedlichen Zeiten dran gearbeitet haben, haben wir uns zwischendurch auf den neusten Stand gebracht. Als wir dann fertig waren, haben wir das Projekt zusammengefügt.</p>
 <h2 id="tests">Tests</h2>
-<p>Um den Routen Algorithmus zu Testen haben wir einfach 2 Punkte ausgewählt und die Route mit der Route auf Google Maps verglichen. Hier haben wir uns einfach zufällig ein paar Punkte rausgesucht und diese verglichen.</p>
-<p><img src="media/image1.png" style="width:6.6875in;height:2.375in" /></p>
+<p>Um den Routen Algorithmus zu Testen haben wir mehrmals 2 Punkte ausgewählt und die berechnete Route mit der Route auf Google Maps verglichen. Hier haben wir uns einfach zufällig ein paar Punkte rausgesucht und diese verglichen. Daran konnten wir ungefähr absehen ob unser Programm die richtige Route berechnet.</p>
+<p><img src="media/image3.png" style="width:6.6875in;height:2.375in" /></p>
+<p>Beim Testen ist uns aufgefallen, dass die data.xml einige Fehler aufweist. Es gibt mehrere Knoten, welche mit falschen Koordinaten vermerkt sind. Dies ließ sich von unserer Seite nicht lösen, weswegen wir es bei weiteren Tests ignoriert haben. Beim Anzeigen der gesamten Karte ist das relativ leicht zu erkennen:</p>
+<p><img src="media/image4.png" style="width:2.84906in;height:3.37937in" alt="Ein Bild, das Text, Karte enthält. Automatisch generierte Beschreibung" /></p>
 <h1 id="projektergebnisse">Projektergebnisse</h1>
 <h2 id="ergebnisse">Ergebnisse</h2>
 <p>Das Programm ist ein voller Erfolg geworden. Es erfüllt alle geforderten Punkte und die Browniepoints. Unserer Meinung nach, ist es genau das Programm was gefordert wurde und deshalb sind wir sehr zufrieden mit dem Ergebnis.</p>
+<p><img src="media/image5.png" style="width:6.69306in;height:4.8375in" alt="Ein Bild, das Text, Karte enthält. Automatisch generierte Beschreibung" /></p>
 <h2 id="mängel">Mängel</h2>
-<p>Wenn man sich einmal alle Verbindungen zwischen den Punkten ausgeben lässt, so kann man feststellen, dass manche Punkte keine Vernünftige Route haben. Wir vermuten, dass diese Knoten keine direkte Autobahn Verbindung haben und somit kein Weg direkt dorthin führt.</p>
-<p><img src="media/image2.jpeg" style="width:2.66806in;height:3.35417in" /></p>
+<p>Wie bei den Programmtests schon erwähnt, gibt es einige Punkte die in dem Datensatz nicht richtig vermerkt sind. Dadurch kommt es bei bestimmten Routen zu eigenartigen Routen. Dieses Problem lässt sich nur durch Korrigierung des Datensatzes lösen.</p>
+<p><img src="media/image6.png" style="width:2.80556in;height:2.11111in" alt="Ein Bild, das Text, Karte enthält. Automatisch generierte Beschreibung" /></p>
 <h2 id="fazit">Fazit</h2>
-<p><strong>Jan:</strong> Das Projekt war relativ spannend und durch die gute Arbeit meiner Teamkollegen sehr gut und in dem zeitlichen Rahmen zu Bewältigen. Es hat Spaß gemacht den Algorithmus zu implementieren und dann am Ende zu sehen, dass alles so funktioniert wie es soll.<br />
-<strong>Merlin:</strong></p>
-<p><strong>Radek:</strong></p>
+<h3 id="jan-2">Jan</h3>
+<p>Das Projekt war relativ spannend und durch die gute Arbeit meiner Teamkollegen sehr gut in dem zeitlichen Rahmen zu Bewältigen. Es hat Spaß gemacht den Algorithmus zu implementieren und dann am Ende zu sehen, dass alles so funktioniert wie es soll.<br />
+<strong>Merlin</strong></p>
+<h3 id="radek-2">Radek</h3>
 </body>
 </html>

@@ -52,19 +52,19 @@ vorgelegt von...
 
 [Arbeitsaufteilung 4](#arbeitsaufteilung)
 
-[Projektverlauf 4](#projektverlauf)
+[Projektverlauf 5](#projektverlauf)
 
-[Überblick 4](#überblick)
+[Überblick 5](#überblick)
 
 [Tests 5](#tests)
 
-[Projektergebnisse 5](#projektergebnisse)
+[Projektergebnisse 6](#projektergebnisse)
 
-[Ergebnisse 5](#ergebnisse)
+[Ergebnisse 6](#ergebnisse)
 
-[Mängel 5](#mängel)
+[Mängel 7](#mängel)
 
-[Fazit 6](#fazit)
+[Fazit 8](#fazit)
 
 # Projektbeschreibung
 
@@ -113,52 +113,62 @@ Route visuell dargestellt werden.
 
 # Theoretische Überlegungen
 
-Durch die wenige Präsenz in der Schule haben wir und online als Gruppe
+Durch die wenige Präsenz in der Schule haben wir uns online als Gruppe
 zusammengeschlossen. Nach dem Gruppen bilden, haben wir uns über Discord
-abgesprochen wer was machen wollte. Hier haben wir das Projekt in die
-Grundsätzlichen teile aufgeteilt und uns zu den einzelnen Teilen
-Gedanken gemacht. Z.B. haben wir uns bei der GUI überlegt, wie wir die
-Autobahnknoten auf die bereitgestellte Deutschland Karte bringen.
-Letztendlich war von Anfang an klar, dass wir unser Projekt über Git
-austauschen.
+abgesprochen wer welchen Aufgabenteil übernehmen soll. Hier haben wir
+das Projekt in die Grundsätzlichen teile aufgeteilt und uns zu den
+einzelnen Teilen Gedanken gemacht. Z.B. haben wir uns bei der GUI
+überlegt, wie wir die Autobahnknoten auf die bereitgestellte
+Deutschland Karte bringen.
+
+Für das gemeinsame Arbeiten an dem Programm haben wir für uns
+Versionskontrollsystem GIT entschieden. Dies ermöglicht es uns
+gleichzeitig an verschiedenen Stellen zu arbeiten und unsere Änderungen
+später zusammenzuführen.
 
 # Softwareentwurf
 
-Wir haben uns dafür entschieden den Hauptteil des Programms und die
-Methoden zum finden der besten Route zu trennen. Das hat den Vorteil,
-dass man verschiedene Algorithmen an einem Ort findet und somit zum
-Finden der besten Route verwenden kann. Zudem werden Hilfsklassen wie
-Z.B. bei der Map verwendet. Hilfsklassen protected Klassen, die in der
-gleichen Datei verwendet werden.
+Wir haben uns dafür entschieden die Webgfindungs-Algorithmen von dem
+Rest des Programms zu testen. Dies ermöglicht es uns verschiedene
+Algorithmen zu implementieren und später zwischen diesen zu wechseln.
+Letztendlich haben wir nur den Dijkstra-Algorithmus implementiert, aber
+die Erweiterungsmöglichkeit bleibt.
 
-Die mitgelieferten Dateien (data.xml und map.png) haben wir in einem
-asset Ordner außerhalb des Source Codes gespeichert.
+![](media/image1.png)![](media/image2.png)Die mitgelieferten Dateien
+(data.xml und map.png) haben wir in einem „asset„ Ordner außerhalb des
+Source Codes gespeichert.
 
 # Projektplanung
 
 ## Persönliche Zielsetzungen
 
-**Jan:** Ich habe mir als Ziel gesetzt, den Algorithmus für die
-Berechnung der besten Route zu implementieren  
-**Merlin:**
+### Jan
 
-**Radek**
+Ich habe mir als Ziel gesetzt, den Algorithmus für die Berechnung der
+besten Route zu implementieren und mich so weiter mit den verschiedenen
+Wegfindungsalgorithmen vertraut zu machen.  
+**Merlin**
+
+### Radek
 
 ## Arbeitsaufteilung
-
-Die Arbeitsaufteilung war relativ simpel:  
-**Jan:** Algorithmus zum finden der besten Route (Dijkstra) und
-Protokoll
-
-**Merlin:** Backend und GUI
-
-**Radek:**
 
 Dadurch, dass wir uns nur online absprechen konnten, haben wir uns am
 Anfang einmal um die Arbeitsaufteilung gekümmert. Jeder hat dann einmal
 mit den anderen besprochen, was jeder von uns machen möchte und was
 deren Ziele sind. Daraus haben wir uns dann auf die Arbeitsaufteilung
 geeinigt. Dies lief reibungs- und problemlos.
+
+###   
+Jan
+
+Algorithmus zum Finden der besten Route (Dijkstra) und Protokoll
+
+### Merlin
+
+Backend und GUI
+
+### Radek
 
 # Projektverlauf
 
@@ -173,12 +183,22 @@ haben wir das Projekt zusammengefügt.
 
 ## Tests
 
-Um den Routen Algorithmus zu Testen haben wir einfach 2 Punkte
-ausgewählt und die Route mit der Route auf Google Maps verglichen. Hier
-haben wir uns einfach zufällig ein paar Punkte rausgesucht und diese
-verglichen.
+Um den Routen Algorithmus zu Testen haben wir mehrmals 2 Punkte
+ausgewählt und die berechnete Route mit der Route auf Google Maps
+verglichen. Hier haben wir uns einfach zufällig ein paar Punkte
+rausgesucht und diese verglichen. Daran konnten wir ungefähr absehen ob
+unser Programm die richtige Route berechnet.
 
-![](media/image1.png)
+![](media/image3.png)
+
+Beim Testen ist uns aufgefallen, dass die data.xml einige Fehler
+aufweist. Es gibt mehrere Knoten, welche mit falschen Koordinaten
+vermerkt sind. Dies ließ sich von unserer Seite nicht lösen, weswegen
+wir es bei weiteren Tests ignoriert haben. Beim Anzeigen der gesamten
+Karte ist das relativ leicht zu erkennen:
+
+![Ein Bild, das Text, Karte enthält. Automatisch generierte
+Beschreibung](media/image4.png)
 
 # Projektergebnisse
 
@@ -189,21 +209,27 @@ Punkte und die Browniepoints. Unserer Meinung nach, ist es genau das
 Programm was gefordert wurde und deshalb sind wir sehr zufrieden mit dem
 Ergebnis.
 
+![Ein Bild, das Text, Karte enthält. Automatisch generierte
+Beschreibung](media/image5.png)
+
 ## Mängel
 
-Wenn man sich einmal alle Verbindungen zwischen den Punkten ausgeben
-lässt, so kann man feststellen, dass manche Punkte keine Vernünftige
-Route haben. Wir vermuten, dass diese Knoten keine direkte Autobahn
-Verbindung haben und somit kein Weg direkt dorthin führt.
+Wie bei den Programmtests schon erwähnt, gibt es einige Punkte die in
+dem Datensatz nicht richtig vermerkt sind. Dadurch kommt es bei
+bestimmten Routen zu eigenartigen Routen. Dieses Problem lässt sich nur
+durch Korrigierung des Datensatzes lösen.
 
-![](media/image2.jpeg)
+![Ein Bild, das Text, Karte enthält. Automatisch generierte
+Beschreibung](media/image6.png)
 
 ## Fazit
 
-**Jan:** Das Projekt war relativ spannend und durch die gute Arbeit
-meiner Teamkollegen sehr gut und in dem zeitlichen Rahmen zu Bewältigen.
-Es hat Spaß gemacht den Algorithmus zu implementieren und dann am Ende
-zu sehen, dass alles so funktioniert wie es soll.  
-**Merlin:**
+### Jan
 
-**Radek:**
+Das Projekt war relativ spannend und durch die gute Arbeit meiner
+Teamkollegen sehr gut in dem zeitlichen Rahmen zu Bewältigen. Es hat
+Spaß gemacht den Algorithmus zu implementieren und dann am Ende zu
+sehen, dass alles so funktioniert wie es soll.  
+**Merlin**
+
+### Radek
