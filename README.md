@@ -44,7 +44,7 @@ vorgelegt von...
 
 [Theoretische Überlegungen 3](#theoretische-überlegungen)
 
-[Softwareentwurf 3](#softwareentwurf)
+[Softwareentwurf 4](#softwareentwurf)
 
 [Projektplanung 4](#projektplanung)
 
@@ -56,7 +56,7 @@ vorgelegt von...
 
 [Überblick 4](#überblick)
 
-[Tests 4](#tests)
+[Tests 5](#tests)
 
 [Projektergebnisse 5](#projektergebnisse)
 
@@ -64,7 +64,7 @@ vorgelegt von...
 
 [Mängel 5](#mängel)
 
-[Fazit 5](#fazit)
+[Fazit 6](#fazit)
 
 # Projektbeschreibung
 
@@ -119,6 +119,8 @@ abgesprochen wer was machen wollte. Hier haben wir das Projekt in die
 Grundsätzlichen teile aufgeteilt und uns zu den einzelnen Teilen
 Gedanken gemacht. Z.B. haben wir uns bei der GUI überlegt, wie wir die
 Autobahnknoten auf die bereitgestellte Deutschland Karte bringen.
+Letztendlich war von Anfang an klar, dass wir unser Projekt über Git
+austauschen.
 
 # Softwareentwurf
 
@@ -126,14 +128,11 @@ Wir haben uns dafür entschieden den Hauptteil des Programms und die
 Methoden zum finden der besten Route zu trennen. Das hat den Vorteil,
 dass man verschiedene Algorithmen an einem Ort findet und somit zum
 Finden der besten Route verwenden kann. Zudem werden Hilfsklassen wie
-Z.B. bei der Map verwendet. Hilfsklassen package-private Klassen, die in
-der gleichen Datei verwendet werden.
+Z.B. bei der Map verwendet. Hilfsklassen protected Klassen, die in der
+gleichen Datei verwendet werden.
 
 Die mitgelieferten Dateien (data.xml und map.png) haben wir in einem
 asset Ordner außerhalb des Source Codes gespeichert.
-
-\-----------------------------------------------------------------------------------------------
-Nur das Oberhalb ist aus diesem Projekt.
 
 # Projektplanung
 
@@ -143,60 +142,68 @@ Nur das Oberhalb ist aus diesem Projekt.
 Berechnung der besten Route zu implementieren  
 **Merlin:**
 
-**Fabian:** Ich habe mir als Zielsetzung gesetzt, dass ich einen
-Einblick in das Projekt und den Code bekommen und das Protokoll zu
-schreiben.
+**Radek**
 
 ## Arbeitsaufteilung
 
 Die Arbeitsaufteilung war relativ simpel:  
-**Jan:** Algorithmus zum finden der besten Route (Dijkstra)
+**Jan:** Algorithmus zum finden der besten Route (Dijkstra) und
+Protokoll
 
 **Merlin:** Backend und GUI
 
-**Fabian:** Protokoll & Hilfe im Programm
+**Radek:**
 
-Die Arbeitsaufteilung lief ziemlich gut. Bei der Struktur haben wir dann
-gemeinsam nochmal drüber gesehen und hier und da noch Verbesserungen
-vorgenommen. Somit haben wir also in der Arbeitsteilung die Stärken von
-uns genutzt und die Aufgaben effizient aufgeteilt sowie uns
-untereinander geholfen.
+Dadurch, dass wir uns nur online absprechen konnten, haben wir uns am
+Anfang einmal um die Arbeitsaufteilung gekümmert. Jeder hat dann einmal
+mit den anderen besprochen, was jeder von uns machen möchte und was
+deren Ziele sind. Daraus haben wir uns dann auf die Arbeitsaufteilung
+geeinigt. Dies lief reibungs- und problemlos.
 
 # Projektverlauf
 
 ## Überblick
 
-Da wir nur wenige PP Stunden hatten, aber in diesen die
-Arbeitsverteilung schon gemacht hatten, konnte jeder erstmal an seiner
-Aufgabe Arbeiten und wir konnten effizient vorrankommen. Zwischendurch
-haben wir uns über Discord verständigt und die fertigen Arbeiten so wie
-uns über unseren Arbeitsstand ausgetauscht. Dies lief sehr gut am Ende
-haben wir dann nur noch alles zusammengetragen.
+Da wir keine PP Stunden hatten, lief die ganze Organisation online über
+Discord und WhatsApp ab. Nach der Arbeitsaufteilung haben wir an dem
+Projekt gearbeitet, wenn gerade Zeit war. Da wir an meist
+unterschiedlichen Zeiten dran gearbeitet haben, haben wir uns
+zwischendurch auf den neusten Stand gebracht. Als wir dann fertig waren,
+haben wir das Projekt zusammengefügt.
 
 ## Tests
+
+Um den Routen Algorithmus zu Testen haben wir einfach 2 Punkte
+ausgewählt und die Route mit der Route auf Google Maps verglichen. Hier
+haben wir uns einfach zufällig ein paar Punkte rausgesucht und diese
+verglichen.
+
+![](media/image1.png)
 
 # Projektergebnisse
 
 ## Ergebnisse
 
-Allgemein haben wir das Programm fertigbekommen und alle
-Mindestanforderungen sowie ein paar Erweiterungen erfüllt. Wir haben
-ebenfalls eigene Ideen eingebracht (eigene Kaffee Spezialität). Außerdem
-sind wir sehr mit der Benutzeroberfläche zufrieden. Auch in der Gruppe
-gab es keine Konflikte und letztendlich haben wir alles erreicht, was
-wir erreichen wollten.
+Das Programm ist ein voller Erfolg geworden. Es erfüllt alle geforderten
+Punkte und die Browniepoints. Unserer Meinung nach, ist es genau das
+Programm was gefordert wurde und deshalb sind wir sehr zufrieden mit dem
+Ergebnis.
 
 ## Mängel
 
+Wenn man sich einmal alle Verbindungen zwischen den Punkten ausgeben
+lässt, so kann man feststellen, dass manche Punkte keine Vernünftige
+Route haben. Wir vermuten, dass diese Knoten keine direkte Autobahn
+Verbindung haben und somit kein Weg direkt dorthin führt.
+
+![](media/image2.jpeg)
+
 ## Fazit
 
-**Jan:** Ich habe eigentlich alles gut hinbekommen bis auf die üblichen
-kleinen Probleme. Durch die Tipps meiner Teamkollegen habe ich meine
-Struktur noch verbessern können und konnte auch was für zukünftige
-Projekte mitnehmen. Die Arbeit mit meinen Teamkollegen hat gutgeklappt
-und hat mir Spaß gemacht.  
+**Jan:** Das Projekt war relativ spannend und durch die gute Arbeit
+meiner Teamkollegen sehr gut und in dem zeitlichen Rahmen zu Bewältigen.
+Es hat Spaß gemacht den Algorithmus zu implementieren und dann am Ende
+zu sehen, dass alles so funktioniert wie es soll.  
 **Merlin:**
 
-**Fabian:** Ich habe alles im zeitlichen Rahmen geschafft und mich mit
-meinen Teamkollegen gut verstanden. Die Arbeit hat gut geklappt und ist
-reibungslos abgelaufen.
+**Radek:**
