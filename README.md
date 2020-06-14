@@ -1,10 +1,9 @@
 **Europaschule Schulzentrum SII Utbremen**
 
-*Protokoll*
-
 **Programmier-Praktikum**
 
-**  
+![Ein Bild, das Text, Karte enthält. Automatisch generierte
+Beschreibung](media/image1.png)**  
 Projekt 4: Routenplaner**
 
 vorgelegt von...
@@ -42,25 +41,25 @@ vorgelegt von...
 
 [Einzelaufgaben 3](#einzelaufgaben)
 
-[Theoretische Überlegungen 3](#theoretische-überlegungen)
+[Theoretische Überlegungen 4](#theoretische-überlegungen)
 
 [Softwareentwurf 4](#softwareentwurf)
 
-[Projektplanung 4](#projektplanung)
+[Projektplanung 5](#projektplanung)
 
-[Persönliche Zielsetzungen 4](#persönliche-zielsetzungen)
+[Persönliche Zielsetzungen 5](#persönliche-zielsetzungen)
 
-[Arbeitsaufteilung 4](#arbeitsaufteilung)
+[Arbeitsaufteilung 5](#arbeitsaufteilung)
 
-[Projektverlauf 5](#projektverlauf)
+[Projektverlauf 6](#projektverlauf)
 
-[Überblick 5](#überblick)
+[Überblick 6](#überblick)
 
-[Tests 5](#tests)
+[Tests 6](#tests)
 
-[Projektergebnisse 6](#projektergebnisse)
+[Projektergebnisse 7](#_Toc43064779)
 
-[Ergebnisse 6](#ergebnisse)
+[Ergebnisse 7](#ergebnisse)
 
 [Mängel 7](#mängel)
 
@@ -72,8 +71,6 @@ Wir schreiben das Jahr 2004. Ein großer Internet Suchanbieter plant die
 Bereitstellung einer Routenplanungssoftware auf Basis von frei
 verfügbarem Kartenmaterial. Ihr werdet beauftragt, einen Prototypen für
 das Autobahnnetz Deutschlands zu erstellen.
-
- 
 
 Euch werden Positionsdaten von Autobahnausfahrten und Verbindungen
 dieser unter einander in Form einer .xml-Datei zu Verfügung gestellt.
@@ -134,7 +131,7 @@ Algorithmen zu implementieren und später zwischen diesen zu wechseln.
 Letztendlich haben wir nur den Dijkstra-Algorithmus implementiert, aber
 die Erweiterungsmöglichkeit bleibt.
 
-![](media/image1.png)![](media/image2.png)Die mitgelieferten Dateien
+![](media/image2.png)![](media/image3.png)Die mitgelieferten Dateien
 (data.xml und map.png) haben wir in einem „asset„ Ordner außerhalb des
 Source Codes gespeichert.
 
@@ -149,7 +146,16 @@ besten Route zu implementieren und mich so weiter mit den verschiedenen
 Wegfindungsalgorithmen vertraut zu machen.  
 **Merlin**
 
+Mein Ziel für diese Projekt ist es, mich weiter mit der Entwicklung von
+Benutzeroberflächen, mit besonderem Fokus auf JavaFX, auseinander zu
+setzen. Außerdem möchte ich mich mit XML-Dateiformat vertraut machen und
+lernen, dieses zu lesen.
+
 ### Radek
+
+Mit diesem Projekt will ich mich im Bereich der Programmierung
+verbessern. Ich habe festgestellt, dass im Vergleich zu meinen
+Klassenkameraden mit der Zeit schlechter geworden bin.
 
 ## Arbeitsaufteilung
 
@@ -164,11 +170,9 @@ Jan
 
 Algorithmus zum Finden der besten Route (Dijkstra) und Protokoll
 
-### Merlin
+### Radek & Merlin
 
-Backend und GUI
-
-### Radek
+Backend und GUI (JavaFX)
 
 # Projektverlauf
 
@@ -189,7 +193,7 @@ verglichen. Hier haben wir uns einfach zufällig ein paar Punkte
 rausgesucht und diese verglichen. Daran konnten wir ungefähr absehen ob
 unser Programm die richtige Route berechnet.
 
-![](media/image3.png)
+![](media/image4.png)
 
 Beim Testen ist uns aufgefallen, dass die data.xml einige Fehler
 aufweist. Es gibt mehrere Knoten, welche mit falschen Koordinaten
@@ -198,7 +202,7 @@ wir es bei weiteren Tests ignoriert haben. Beim Anzeigen der gesamten
 Karte ist das relativ leicht zu erkennen:
 
 ![Ein Bild, das Text, Karte enthält. Automatisch generierte
-Beschreibung](media/image4.png)
+Beschreibung](media/image1.png)
 
 # Projektergebnisse
 
@@ -212,15 +216,16 @@ Ergebnis.
 ![Ein Bild, das Text, Karte enthält. Automatisch generierte
 Beschreibung](media/image5.png)
 
-## Mängel
+## ![](media/image6.png)Mängel
 
 Wie bei den Programmtests schon erwähnt, gibt es einige Punkte die in
 dem Datensatz nicht richtig vermerkt sind. Dadurch kommt es bei
 bestimmten Routen zu eigenartigen Routen. Dieses Problem lässt sich nur
 durch Korrigierung des Datensatzes lösen.
 
-![Ein Bild, das Text, Karte enthält. Automatisch generierte
-Beschreibung](media/image6.png)
+Außerdem ist der Datensatz als XML-Datei formatiert. XML ist kein
+besonders performantes Format, deswegen kommt es zu einer relativ langen
+Ladezeit beim starten des Programms.
 
 ## Fazit
 
@@ -232,4 +237,15 @@ Spaß gemacht den Algorithmus zu implementieren und dann am Ende zu
 sehen, dass alles so funktioniert wie es soll.  
 **Merlin**
 
+Mir hat das Projekt gut gefallen. Besonders die Zusammenarbeit im Team
+hat mir Spaß gemacht und ich konnte meine Kenntnisse mit JavaFx weiter
+vertiefen. Die Übersetzung der vorgegebenen lat/lon Werte in x/y
+Pixelwerte habe ich als am spannendsten empfunden.
+
 ### Radek
+
+Dieses Projekt lief anfangs ziemlich schwer und ich hatte Probleme
+manche Funktionen zu verstehen, aber nach einige Zeit, ging das viel
+einfacher und ich könnte gut mit meinen Kollegen arbeiten. Ich konnte
+mich bei diesem Projekt weiter mit der Programmierung mit JavaFx
+auseinandersetzen und habe viel gelernt.
